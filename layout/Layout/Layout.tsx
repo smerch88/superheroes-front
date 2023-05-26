@@ -19,8 +19,8 @@ export const Layout: FC<LayoutProps> = ({
   );
 };
 
-export const withLayout = (Component: ComponentType<any>) => {
-  return function withLayoutComponent(props: any) {
+export const withLayout = <P extends object>(Component: ComponentType<P>) => {
+  return function WithLayoutComponent(props: P) {
     return (
       <Layout {...props}>
         <Component {...props} />

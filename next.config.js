@@ -10,11 +10,19 @@ module.exports = {
     });
     return config;
   },
+  // images: {
+  //   domains: ['robohash.org', 'fakestoreapi.com'],
+  //   loader: 'default',
+  //   path: '/_next/image',
+  //   deviceSizes: [480, 768, 1440, 1920],
+  //   formats: ['image/webp'],
+  // },
   images: {
-    domains: ['robohash.org', 'fakestoreapi.com'],
-    loader: 'default',
-    path: '/_next/image',
-    deviceSizes: [480, 768, 1440, 1920],
-    formats: ['image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
 };

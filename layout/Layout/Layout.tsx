@@ -12,7 +12,7 @@ export const Layout: FC<LayoutProps> = ({
     <div className="flex h-full min-h-screen flex-col bg-slate-50" {...props}>
       <Header />
 
-      <main className="flex-grow pt-[78px] xl:pt-[86px]">{children}</main>
+      <main className="flex-grow">{children}</main>
 
       <Footer />
     </div>

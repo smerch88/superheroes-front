@@ -1,1 +1,6 @@
-https://github.com/smerch88/Next-TS-Template
+To start a project enter commands:
+
+<pre>
+npm i
+npm run dev
+</pre>

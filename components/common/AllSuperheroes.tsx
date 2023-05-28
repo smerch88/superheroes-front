@@ -1,8 +1,9 @@
 import { SuperHeroCardMini } from '@/components/SuperHeroCardMini';
 import { SuperheroesEntity } from '@/types';
 import { FC } from 'react';
-import { Section } from './common/Section';
-import { Title } from './Typography/Title';
+import { Section } from './Section';
+import { Title } from '../Typography/Title';
+import { isURL } from '@/utils/urlcheck';
 
 type AllSuperheroesProps = {
   superheroes: SuperheroesEntity[];
@@ -21,7 +22,13 @@ export const AllSuperheroes: FC<AllSuperheroesProps> = ({ superheroes }) => {
               <SuperHeroCardMini
                 id={superhero.id}
                 nickname={superhero.nickname}
-                image={'https://robohash.org/hicveldicta.png'}
+                image={
+                  superhero?.imageLinks &&
+                  superhero.imageLinks[0] &&
+                  isURL(superhero.imageLinks[0])
+                    ? superhero.imageLinks[0]
+                    : 'https://i1.sndcdn.com/artworks-000380631408-vyo4ax-t500x500.jpg'
+                }
                 direction="vertical"
               />
             </li>

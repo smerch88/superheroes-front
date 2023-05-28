@@ -5,7 +5,7 @@ import { FC, useEffect, useState } from 'react';
 import { Heroes } from '@/types';
 import { useRouter } from 'next/router';
 import { Pagination } from '@/components/Pagintaion/Pagination';
-import { AllSuperheroes } from '@/components/AllSuperheroes';
+import { AllSuperheroes } from '@/components/common/AllSuperheroes';
 import Link from 'next/link';
 
 type HeroesPageProps = {
@@ -34,7 +34,7 @@ export const getServerSideProps = async (
   }
 };
 
-const perPage = 10;
+const perPage = 5;
 
 const Heroes: FC<HeroesPageProps> = ({ data }) => {
   const router = useRouter();

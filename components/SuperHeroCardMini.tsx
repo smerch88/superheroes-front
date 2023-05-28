@@ -31,8 +31,13 @@ export const SuperHeroCardMini: FC<SuperHeroCardMiniProps> = ({
           : 'flex-col items-center',
       )}
     >
-      <div className="relative h-10 w-10">
-        <Image src={image} alt={`${nickname} image`} fill />
+      <div className="relative h-20 w-20">
+        <Image
+          src={image}
+          alt={`${nickname} image`}
+          fill
+          className="object-cover"
+        />
       </div>
       <Link
         href={`/superhero/${id}`}
